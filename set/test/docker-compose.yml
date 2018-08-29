@@ -1,0 +1,44 @@
+version: '3'
+
+networks:
+  default:
+
+services:
+
+  ochello:
+    image: ochello
+    container_name: hello.octest
+    ports:
+      - 8080:8080
+    networks:
+      default:
+        aliases:
+          - hello.octest
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger.octest
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+    ports:
+      - 5775:5775/udp
+      - 6831:6831/udp
+      - 6832:6832/udp
+      - 5778:5778
+      - 16686:16686
+      - 14268:14268
+      - 9411:9411
+    networks:
+      default:
+        aliases:
+          - jaeger.octest
+
+  prometheus:
+    image: ocprometheus
+    container_name: prometheus.octest
+    ports:
+      - 9090:9090
+    networks:
+      default:
+        aliases:
+          - prometheus.octest
