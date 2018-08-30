@@ -19,5 +19,4 @@ Browse to http://localhost:TODO for Jaeger dashboard
 
 ## TODO
 
--[ ] fix docker-compose networking, localhost from within a container doesn't work.
--[ ] figure out which port Jaeger uses for a dashboard, if any.
+- [ ] Fix Jaeger 404 error
