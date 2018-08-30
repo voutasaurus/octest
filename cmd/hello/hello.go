@@ -52,7 +52,8 @@ func main() {
 
 func startTracing() error {
 	j, err := jaeger.NewExporter(jaeger.Options{
-		AgentEndpoint: "localhost:9411",
+		AgentEndpoint: "jaeger.octest:6831",
+		Endpoint:      "http://jaeger.octest:9411",
 		ServiceName:   "hello",
 	})
 	if err != nil {
