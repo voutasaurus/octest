@@ -15,8 +15,4 @@ Browse to http://localhost:8080 for Go App
 
 Browse to http://localhost:9090 for Prometheus dashboard
 
-Browse to http://localhost:TODO for Jaeger dashboard
-
-## TODO
-
-- [ ] Fix Jaeger 404 error
+Browse to http://localhost:16686 for Jaeger dashboard
