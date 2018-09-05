@@ -24,3 +24,5 @@ func Traces(agent, endpoint, service string) error {
 	trace.ApplyConfig(trace.Config{DefaultSampler: trace.AlwaysSample()})
 	return nil
 }
+
+var StartSpan = trace.StartSpan

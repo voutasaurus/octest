@@ -12,11 +12,6 @@ import (
 	"go.opencensus.io/stats/view"
 )
 
-// Shared stats
-var (
-	MHits = NewCounter("hits", "The number of hits recieved on / endpoint", "1")
-)
-
 // Metrics exposes a prometheus compatible endpoint for metrics collection.
 func Metrics(logger *log.Logger, addr string) error {
 	p, err := prometheus.NewExporter(prometheus.Options{})
