@@ -8,6 +8,11 @@ services:
   ochello:
     image: ochello
     container_name: hello.octest
+    environment:
+      - JAEGER_AGENT_ADDR=jaeger.octest:6831
+      - JAEGER_COLLECTOR_URL=http://jaeger.octest:14268
+      - METRICS_ADDR=:8081
+      - HELLO_ADDR=:8080
     ports:
       - 8080:8080
       - 8081:8081

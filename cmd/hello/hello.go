@@ -19,8 +19,8 @@ func main() {
 	logger.Println("starting...")
 
 	var (
-		agent       = config.Env("JAEGER_AGENT_ADDR").WithDefault("jaeger.octest:6831")
-		endpoint    = config.Env("JAEGER_COLLECTOR_URL").WithDefault("http://jaeger.octest:14268")
+		agent       = config.Env("JAEGER_AGENT_ADDR").WithDefault("localhost:6831")
+		endpoint    = config.Env("JAEGER_COLLECTOR_URL").WithDefault("http://localhost:14268")
 		metricsAddr = config.Env("METRICS_ADDR").WithDefault(":8081")
 		addr        = config.Env("HELLO_ADDR").WithDefault(":8080")
 	)
